@@ -13,11 +13,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-class AccesoBD extends AsyncTask<Void, Void, String> {
+class AccesoBaseDatos extends AsyncTask<Void, Void, String> {
     private String json_url;
     private Context context;
 
-    AccesoBD(Context context, String jsonUrl) {
+    AccesoBaseDatos(Context context, String jsonUrl) {
         this.context = context;
         this.json_url = jsonUrl;
     }

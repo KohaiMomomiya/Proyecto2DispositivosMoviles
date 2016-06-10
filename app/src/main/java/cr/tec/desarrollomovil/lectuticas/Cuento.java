@@ -7,36 +7,38 @@ import java.util.ArrayList;
  */
 public class Cuento {
 
-    private int idCuento;
-    private String nombre;
-    private ArrayList<Parrafo> parrafos = null;
+  private int idCuento;
 
-    public Cuento(String nombre, int idCuento) {
-        this.nombre = nombre;
-        this.idCuento = idCuento;
-    }
+  private String nombre;
+  private ArrayList<Parrafo> parrafos;    // Párrafos corresponden a páginas.
 
-    public void addParrafo(Parrafo parrafo){
-        parrafos.add(parrafo);
-    }
+  public Cuento(String nombre, int idCuento) {
+    this.nombre = nombre;
+    this.idCuento = idCuento;
+    this.parrafos = new ArrayList<Parrafo>();
+  }
 
-    public Parrafo getParrafo(int index){
-        return parrafos.get(index);
-    }
+  public void agregarParrafo(Parrafo parrafo) {
+    parrafos.add(parrafo);
+  }
 
-    public String getNombre() {
-        return nombre;
-    }
+  public Parrafo getParrafo(int index) {
+    return parrafos.get(index);
+  }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+  public String getNombre() {
+    return nombre;
+  }
 
-    public int getIdCuento() {
-        return idCuento;
-    }
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
 
-    public void setIdCuento(int idCuento) {
-        this.idCuento = idCuento;
-    }
+  public int getIdCuento() {
+    return idCuento;
+  }
+
+  public void setIdCuento(int idCuento) {
+    this.idCuento = idCuento;
+  }
 }

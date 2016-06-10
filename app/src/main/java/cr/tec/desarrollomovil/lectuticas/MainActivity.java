@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
-
   public void irALeyendas(View view){
     Intent intent = new Intent(this, LeyendasActivity.class);
     startActivity(intent);
