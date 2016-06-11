@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="cr.tec.desarrollomovil.lectuticas.LeyendasActivity">
+    tools:context="cr.tec.desarrollomovil.lectuticas.CuentoCeguaActivity">
 
-    <include layout="@layout/content_leyendas"/>
+    <include layout="@layout/content_cuento_cegua"/>
 
 </android.support.design.widget.CoordinatorLayout>

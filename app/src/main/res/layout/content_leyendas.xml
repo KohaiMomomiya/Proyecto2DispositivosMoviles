@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_principal"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnCadejos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="56dp"
+                android:layout_marginStart="56dp"
+                android:background="@drawable/icono_lib_cadejos"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="IrAlCadejos" />
+
+            <Button
+                android:id="@+id/btnCegua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btnCadejos"
+                android:layout_marginLeft="58dp"
+                android:layout_marginStart="58dp"
+                android:layout_toEndOf="@+id/btnCadejos"
+                android:layout_toRightOf="@+id/btnCadejos"
+                android:background="@drawable/icono_lib_cegua"
+                android:onClick="IrACegua" />
+        </RelativeLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
