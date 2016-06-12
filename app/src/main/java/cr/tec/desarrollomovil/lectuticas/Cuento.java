@@ -1,11 +1,12 @@
 package cr.tec.desarrollomovil.lectuticas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Daniel on 09/06/2016.
  */
-public class Cuento {
+public class Cuento implements Serializable{
 
   private int idCuento;
 

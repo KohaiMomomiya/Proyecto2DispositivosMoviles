@@ -87,7 +87,9 @@ public class CuentoCadejosActivity extends AppCompatActivity {
         btnPreguntas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CuentoCadejosActivity.this,PreguntasCadejosActivity.class));
+                Intent intentGo = new Intent(CuentoCadejosActivity.this,PreguntasCadejosActivity.class);
+                intentGo.putExtra("idCuento",idCuento);
+                startActivity(intentGo);
             }
         });
     }

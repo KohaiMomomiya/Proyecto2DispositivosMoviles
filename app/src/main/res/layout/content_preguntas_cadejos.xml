@@ -10,6 +10,76 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity"
-    tools:showIn="@layout/activity_preguntas_cadejos">
+    tools:showIn="@layout/activity_preguntas_cadejos"
+    android:background="@drawable/cadejos">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aqui va la pregunta"
+        android:id="@+id/tvPregunta"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compresión de Lectura"
+        android:id="@+id/textView"
+        android:layout_marginTop="39dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/conjunto"
+        android:layout_below="@+id/tvPregunta"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="respuesta 1"
+            android:id="@+id/rbRespuesta1"
+            android:checked="false"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="respuesta 2"
+            android:id="@+id/rbRespuesta2"
+            android:checked="false"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="respuesta 3"
+            android:id="@+id/rbRespuesta3"
+            android:checked="false"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente Pregunta"
+        android:id="@+id/btnSiguientePregunta"
+        android:background="@drawable/boton_menu_principal"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
