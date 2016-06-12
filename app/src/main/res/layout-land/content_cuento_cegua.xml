@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/cegua" />
+        android:src="@drawable/cegua"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/btnAtras"
@@ -37,12 +38,36 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="New Text"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginTop="10dp"
+        android:text="New Text"
+        android:textColor="#ffffff"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnPreguntas"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_preguntas"
+        android:layout_alignBottom="@+id/btnMenu"
+        android:layout_toEndOf="@+id/btnMenu"
+        android:layout_alignLeft="@+id/btnAdelante"
+        android:layout_alignStart="@+id/btnAdelante" />
+
+    <Button
+        android:id="@+id/btnMenu"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_home"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btnAdelante"
+        android:layout_toStartOf="@+id/btnAdelante"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp" />
+
 </RelativeLayout>

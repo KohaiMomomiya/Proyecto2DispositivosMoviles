@@ -2,4 +2,5 @@
     <string name="app_name">LectuTicas</string>
     <string name="action_settings">Settings</string>
     <string name="error_ConexionNoPosible">No se puede conectar a la base de datos</string>
+    <string name="title_activity_preguntas_cadejos">PreguntasCadejosActivity</string>
 </resources>

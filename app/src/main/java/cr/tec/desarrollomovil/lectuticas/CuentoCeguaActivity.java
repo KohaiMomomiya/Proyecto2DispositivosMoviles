@@ -31,7 +31,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuento_cegua);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         idCuento = intent.getStringExtra("Id");
         nombreCuento = intent.getStringExtra("Nombre");
 
@@ -44,7 +44,9 @@ public class CuentoCeguaActivity extends AppCompatActivity {
         textParrafo.setText(lista.get(contador).getTexto());
 
         Button btnAnterior = (Button) findViewById(R.id.btnAtras);
-        final Button btnSiguiente = (Button) findViewById(R.id.btnAdelante);
+        Button btnSiguiente = (Button) findViewById(R.id.btnAdelante);
+        Button btnMenu = (Button) findViewById(R.id.btnMenu);
+        Button btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +55,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
                     contador++;
                     textParrafo.setText(lista.get(contador).getTexto());
                 }else if(contador+1 == cantParrafos){
-                    textParrafo.setText(lista.get(contador).getTexto());
+
                 }
             }
         });
@@ -61,6 +63,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
         btnAnterior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(contador > 0){
                     contador--;
                     textParrafo.setText(lista.get(contador).getTexto());
@@ -72,6 +75,23 @@ public class CuentoCeguaActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(CuentoCeguaActivity.this,MainActivity.class));
+            }
+        });
+
+        btnPreguntas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CuentoCeguaActivity.this,PreguntasCeguaActivity.class));
+            }
+        });
+
+
 
 
     }

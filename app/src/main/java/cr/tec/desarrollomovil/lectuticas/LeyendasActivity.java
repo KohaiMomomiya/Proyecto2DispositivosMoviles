@@ -27,7 +27,7 @@ public class LeyendasActivity extends AppCompatActivity {
 
     public void IrAlCadejos(View view){
         Intent intent = new Intent(this, CuentoCadejosActivity.class);
-        getIdStory("El%20Cadejo");
+        getIdStory("El%20Cadejos");
         intent.putExtra("Id",idCuento);
         intent.putExtra("Nombre",nombreCuento);
         startActivity(intent);
