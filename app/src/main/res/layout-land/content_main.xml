@@ -32,6 +32,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
             android:layout_gravity="start"
             android:id="@+id/button"
             android:background="@drawable/story"
@@ -46,6 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:minWidth="1dp"
+                android:minHeight="1dp"
                 android:id="@+id/button2"
                 android:background="@drawable/about"
                 style="?android:attr/borderlessButtonStyle"

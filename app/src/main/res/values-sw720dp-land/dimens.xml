@@ -3,5 +3,6 @@
     <dimen name="margen_botones_activity_principal">250dp</dimen>
     <dimen name="margen_botones_seleccion_historia">5dp</dimen>
     <dimen name="margen_layout_seleccion_historia">20dp</dimen>
-    <dimen name="margen_botones_paginas_cuento">5dp</dimen>
+    <dimen name="margen_botones_paginas_cuento">20dp</dimen>
+
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LectuTicas</string>
+    <string name="acerca_de_lectuticas">About LectuTicas</string>
+    <string name="action_settings">Settings</string>
+    <string name="agradecimientos_listing">Special thanks</string>
+    <string name="desarrolladores_listing">Developers:</string>
+    <string name="descripcion_listing">Overview:</string>
+    <string name="error_ConexionNoPosible">Cannot connect to database</string>
+    <string name="escuela_ingenieria_computacion">School of Software Engineering</string>
+    <string name="nombre_curso_disp_moviles">Mobile Applications Development</string>
+    <string name="tec_nombre_completo">Costa Rica\'s Institute of Technology</string>
+    <string name="descripcion_app">This application\'s objective is to encourage reading habits on children with an interactive approach to tell tales and legends from Costa Rica\'s folklore, allowing them to get a better understanding about these stories and chances to answer questions about them. Some of the included legends are "El Cadejos" and "La Cegua."</string>
+</resources>
