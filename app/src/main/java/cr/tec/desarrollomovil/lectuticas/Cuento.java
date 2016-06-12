@@ -26,6 +26,9 @@ public class Cuento {
     return parrafos.get(index);
   }
 
+  public ArrayList<Parrafo> getLista(){
+    return parrafos;
+  }
   public String getNombre() {
     return nombre;
   }
