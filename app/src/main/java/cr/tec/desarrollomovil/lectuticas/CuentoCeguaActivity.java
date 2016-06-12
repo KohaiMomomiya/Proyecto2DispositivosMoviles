@@ -1,9 +1,8 @@
 package cr.tec.desarrollomovil.lectuticas;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,7 +25,6 @@ public class CuentoCeguaActivity extends AppCompatActivity {
     private TextView textParrafo;
     private int cantParrafos;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +36,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
         cuentoCegua = new Cuento(nombreCuento,Integer.parseInt(idCuento));
         getParrafos();
         contador = 0;
-        textParrafo = (TextView) findViewById(R.id.txtCegua);
+        textParrafo = (TextView) findViewById(R.id.textoParrafo);
         lista = cuentoCegua.getLista();
         cantParrafos = lista.size();
         textParrafo.setText(lista.get(contador).getTexto());
