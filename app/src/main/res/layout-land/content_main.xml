@@ -19,38 +19,28 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/margen_botones_activity_principal"
-            android:layout_marginLeft="@dimen/margen_botones_activity_principal"
-            android:layout_marginEnd="@dimen/margen_botones_activity_principal"
-            android:layout_marginRight="@dimen/margen_botones_activity_principal">
+            android:layout_centerInParent="true">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margen_botones_activity_principal"
+            android:layout_marginEnd="@dimen/margen_botones_activity_principal"
             android:minWidth="1dp"
             android:minHeight="1dp"
             android:layout_gravity="start"
-            android:id="@+id/button"
+            android:id="@+id/botonSeleccionarHistoria"
             android:background="@drawable/story"
             style="?android:attr/borderlessButtonStyle"
             android:onClick="irALeyendas" />
-        <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_marginLeft="@dimen/margen_botones_activity_principal"
+                android:layout_marginStart="@dimen/margen_botones_activity_principal"
                 android:minWidth="1dp"
                 android:minHeight="1dp"
-                android:id="@+id/button2"
+                android:id="@+id/botonAcercaDe"
                 android:background="@drawable/about"
                 style="?android:attr/borderlessButtonStyle"
                 android:contextClickable="false"

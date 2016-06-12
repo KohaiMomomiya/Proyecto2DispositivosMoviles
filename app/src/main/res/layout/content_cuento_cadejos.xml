@@ -12,14 +12,37 @@
             android:scaleType="fitXY"
             />
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/EstiloTextoCuentos"
-            android:text="New Text"
-            android:id="@+id/textoParrafo"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/barraBotones">
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4" />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/scrollView2">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/EstiloTextoCuentos"
+                    android:text="New Text"
+                    android:id="@+id/textoParrafo"
+                    android:gravity="center"/>
+        </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
             android:orientation="horizontal"
@@ -35,7 +58,7 @@
             android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
             android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
             android:layout_marginBottom="@dimen/margen_botones_paginas_cuento"
-            >
+            android:id="@+id/barraBotones">
 
         <Button
                 android:layout_width="wrap_content"
@@ -86,4 +109,6 @@
                 style="?android:attr/borderlessButtonStyle"
                 />
     </LinearLayout>
+
+
 </RelativeLayout>

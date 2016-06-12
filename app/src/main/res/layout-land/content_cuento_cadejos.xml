@@ -11,6 +11,82 @@
             android:src="@drawable/cadejos"
             android:visibility="visible"/>
 
+    <LinearLayout
+            android:id="@+id/barraBotones"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
+            >
+        <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        <Button
+                android:id="@+id/btnMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/tamaño_boton_cuentos"
+                android:minHeight="@dimen/tamaño_boton_cuentos"
+                android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+                android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
+                android:background="@drawable/boton_home" />
+
+        <Button
+                android:id="@+id/btnPreguntas"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:minWidth="@dimen/tamaño_boton_cuentos"
+                android:minHeight="@dimen/tamaño_boton_cuentos"
+                android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
+                android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
+                android:background="@drawable/boton_preguntas" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margen_botones_paginas_cuento"
+            android:id="@+id/linearLayout"
+            android:layout_below="@+id/barraBotones"
+            android:layout_toRightOf="@+id/btnAtras"
+            android:layout_toEndOf="@+id/btnAtras"
+            android:layout_toLeftOf="@+id/btnAdelante"
+            android:layout_toStartOf="@+id/btnAdelante">
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.10"
+                />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="@dimen/margen_botones_paginas_cuento"
+                >
+
+            <TextView
+                    android:id="@+id/textoParrafo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:text="New Text"
+                    style="@style/EstiloTextoCuentos"/>
+        </ScrollView>
+    </LinearLayout>
+
     <Button
             android:id="@+id/btnAtras"
             style="?android:attr/borderlessButtonStyle"
@@ -19,6 +95,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
             android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
             android:minWidth="@dimen/tamaño_boton_cuentos"
             android:minHeight="@dimen/tamaño_boton_cuentos"
             android:background="@drawable/boton_atras"
@@ -31,6 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
             android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
             android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
             android:minWidth="@dimen/tamaño_boton_cuentos"
@@ -39,47 +119,5 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 
-    <TextView
-            android:id="@+id/textoParrafo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:text="New Text"
-            style="@style/EstiloTextoCuentos"/>
-
-    <Button
-            android:id="@+id/btnPreguntas"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="@dimen/tamaño_boton_cuentos"
-            android:minHeight="@dimen/tamaño_boton_cuentos"
-            android:background="@drawable/boton_preguntas"
-            android:layout_marginTop="@dimen/margen_botones_paginas_cuento"
-            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
-            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            />
-
-    <Button
-            android:id="@+id/btnMenu"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="@dimen/tamaño_boton_cuentos"
-            android:minHeight="@dimen/tamaño_boton_cuentos"
-            android:background="@drawable/boton_home"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/btnPreguntas"
-            android:layout_toStartOf="@id/btnPreguntas"
-            android:layout_marginTop="@dimen/margen_botones_paginas_cuento"
-            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
-            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"/>
 
 </RelativeLayout>
