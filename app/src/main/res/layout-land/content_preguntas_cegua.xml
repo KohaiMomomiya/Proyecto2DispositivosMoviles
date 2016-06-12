@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity"
+                tools:showIn="@layout/activity_preguntas_cegua"
+                android:background="@drawable/cegua">
+
+    <LinearLayout
+            android:id="@+id/layoutTituloComprensionLectura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_comprension_lectura"
+                android:id="@+id/textView"
+                style="@style/Texto_Titulo"
+                />
+        <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                />
+
+    </LinearLayout>
+    <Space
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margen_botones_activity_principal"
+            />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/layoutTituloComprensionLectura">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/siguiente_pregunta"
+                android:id="@+id/btnSiguientePregunta"
+                style="@style/AppButton"/>
+
+        <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:id="@+id/space"/>
+
+        <LinearLayout
+                android:id="@+id/layoutPregunta"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
+                android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
+                >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/texto_pregunta"
+                    android:id="@+id/tvPregunta"
+                    style="@style/Texto_Cuerpo_ComprensionLectura" />
+
+            <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/conjunto"
+                    >
+
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/respuesta_a"
+                        android:id="@+id/rbRespuesta1"
+                        android:checked="false"
+                        style="@style/Texto_Opciones_ComprensionLectura" />
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/respuesta_b"
+                        android:id="@+id/rbRespuesta2"
+                        android:checked="false"
+                        style="@style/Texto_Opciones_ComprensionLectura" />
+
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/respuesta_c"
+                        android:id="@+id/rbRespuesta3"
+                        android:checked="false"
+                        style="@style/Texto_Opciones_ComprensionLectura" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

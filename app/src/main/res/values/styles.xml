@@ -29,28 +29,54 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextoAcercaDe_Cuerpo">
+    <style name="Texto_Cuerpo">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/tamaño_texto_cuerpo</item>
     </style>
 
-    <style name="TextoAcercaDe_Cuerpo_Listado" parent="TextoAcercaDe_Cuerpo">
+    <style name="Texto_Cuerpo_Listado" parent="Texto_Cuerpo">
         <item name="android:layout_marginLeft">80dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
     </style>
 
-    <style name="TextoAcercaDe_Cuerpo_Negrita" parent="TextoAcercaDe_Cuerpo">
+    <style name="Texto_Cuerpo_Negrita" parent="Texto_Cuerpo">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextoAcercaDe_Titulo" parent="TextoAcercaDe_Cuerpo_Negrita">
+    <style name="Texto_Titulo" parent="Texto_Cuerpo_Negrita">
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">@dimen/tamaño_texto_titulo</item>
+    </style>
+
+    <style name="TituloComprensionLectura" parent="Texto_Titulo">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="Texto_Cuerpo_ComprensionLectura" parent="Texto_Cuerpo">
+        <item name="android:textSize">@dimen/tamaño_texto_cuerpo_pregunta</item>
+    </style>
+
+    <style name="Texto_Opciones_ComprensionLectura" parent="Texto_Cuerpo_Negrita">
+        <item name="android:textSize">@dimen/tamaño_texto_cuerpo</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/margen_botones_paginas_cuento</item>
+        <item name="android:paddingRight">@dimen/margen_botones_paginas_cuento</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/boton_menu_principal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/Texto_Cuerpo_Negrita</item>
+
+
     </style>
 
 </resources>

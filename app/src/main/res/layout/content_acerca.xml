@@ -26,69 +26,69 @@
 
             <TextView
                     android:id="@+id/textView2"
-                    style="@style/TextoAcercaDe_Titulo"
+                    style="@style/Texto_Titulo"
                     android:text="@string/acerca_de_lectuticas" />
 
             <TextView
                     android:id="@+id/textView3"
-                    style="@style/TextoAcercaDe_Cuerpo"
+                    style="@style/Texto_Cuerpo"
                     android:text="@string/tec_nombre_completo"
                     />
 
             <TextView
                     android:id="@+id/textView16"
-                    style="@style/TextoAcercaDe_Cuerpo"
+                    style="@style/Texto_Cuerpo"
                     android:text="@string/escuela_ingenieria_computacion"/>
 
             <TextView
                     android:id="@+id/textView5"
-                    style="@style/TextoAcercaDe_Cuerpo"
+                    style="@style/Texto_Cuerpo"
                     android:text="@string/nombre_curso_disp_moviles" />
 
             <TextView
                     android:id="@+id/textView8"
-                    style="@style/TextoAcercaDe_Cuerpo_Negrita"
+                    style="@style/Texto_Cuerpo_Negrita"
                     android:text="@string/desarrolladores_listing" />
 
             <TextView
                     android:id="@+id/textView9"
-                    style="@style/TextoAcercaDe_Cuerpo_Listado"
+                    style="@style/Texto_Cuerpo_Listado"
                     android:text="@string/esteban_fonseca_montoya"/>
 
             <TextView
                     android:id="@+id/textView10"
-                    style="@style/TextoAcercaDe_Cuerpo_Listado"
+                    style="@style/Texto_Cuerpo_Listado"
                     android:text="@string/arlyn_lopez_navarro"/>
 
             <TextView
                     android:id="@+id/textView11"
-                    style="@style/TextoAcercaDe_Cuerpo_Listado"
+                    style="@style/Texto_Cuerpo_Listado"
                     android:text="@string/daniel_pacheco_lascarez"/>
 
             <TextView
                     android:id="@+id/textView12"
-                    style="@style/TextoAcercaDe_Cuerpo_Negrita"
+                    style="@style/Texto_Cuerpo_Negrita"
                     android:text="@string/agradecimientos_listing" />
 
             <TextView
                     android:id="@+id/textView14"
-                    style="@style/TextoAcercaDe_Cuerpo_Listado"
+                    style="@style/Texto_Cuerpo_Listado"
                     android:text="@string/parque_la_libertad" />
 
             <TextView
                     android:id="@+id/textView7"
-                    style="@style/TextoAcercaDe_Cuerpo_Listado"
+                    style="@style/Texto_Cuerpo_Listado"
                     android:text="@string/prof_adriana_alvarez_figueroa" />
 
             <TextView
                     android:id="@+id/textView15"
-                    style="@style/TextoAcercaDe_Cuerpo_Negrita"
+                    style="@style/Texto_Cuerpo_Negrita"
                     android:text="@string/descripcion_listing"
                     android:textColor="@android:color/white" />
 
             <TextView
                     android:id="@+id/textView18"
-                    style="@style/TextoAcercaDe_Cuerpo"
+                    style="@style/Texto_Cuerpo"
                     android:text="@string/descripcion_app"
                     android:textColor="@android:color/white"/>
         </LinearLayout>

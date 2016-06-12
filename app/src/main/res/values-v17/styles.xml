@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextoAcercaDe_Cuerpo">
+    <style name="Texto_Cuerpo">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">10dp</item>
@@ -10,9 +10,22 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="TextoAcercaDe_Cuerpo_Listado" parent="TextoAcercaDe_Cuerpo">
+    <style name="Texto_Cuerpo_Listado" parent="Texto_Cuerpo">
         <item name="android:layout_marginStart">80dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/margen_botones_paginas_cuento</item>
+        <item name="android:paddingEnd">@dimen/margen_botones_paginas_cuento</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/boton_menu_principal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/Texto_Cuerpo_Negrita</item>
+
+
     </style>
 </resources>

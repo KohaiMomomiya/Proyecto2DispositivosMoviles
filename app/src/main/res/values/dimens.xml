@@ -8,4 +8,9 @@
     <dimen name="margen_botones_paginas_cuento">10dp</dimen>
     <dimen name="tamaño_texto_parrafo_cuentos">6sp</dimen>
     <dimen name="tamaño_boton_cuentos">1dp</dimen>
+
+    <dimen name="tamaño_texto_cuerpo">16sp</dimen>
+    <dimen name="tamaño_texto_cuerpo_pregunta">18sp</dimen>
+    <dimen name="tamaño_texto_titulo">24sp</dimen>
+
 </resources>

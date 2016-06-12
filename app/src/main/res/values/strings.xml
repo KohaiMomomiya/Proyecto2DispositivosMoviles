@@ -16,4 +16,10 @@
     <string name="parque_la_libertad" translatable="false">Parque La Libertad</string>
     <string name="prof_adriana_alvarez_figueroa" translatable="false">Prof. Adriana Álvarez Figueroa</string>
     <string name="descripcion_listing">Descripción:</string>
+    <string name="siguiente_pregunta">Siguiente Pregunta</string>
+    <string name="titulo_comprension_lectura">Comprensión de Lectura</string>
+    <string name="texto_pregunta">Aqui va la pregunta...</string>
+    <string name="respuesta_a">respuesta 1</string>
+    <string name="respuesta_b">respuesta 2</string>
+    <string name="respuesta_c">respuesta 3</string>
 </resources>
