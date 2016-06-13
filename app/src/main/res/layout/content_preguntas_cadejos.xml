@@ -16,22 +16,27 @@
                 android:background="@drawable/cadejos">
 
     <LinearLayout
+            android:id="@+id/linearLayout1"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/botonMenu"
+            >
 
         <Space
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 />
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:text="@string/titulo_comprension_lectura"
                 android:id="@+id/textView"
                 style="@style/Texto_Titulo" />
@@ -43,13 +48,16 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/texto_pregunta"
                 android:id="@+id/tvPregunta"
+                android:background="#66000000"
                 style="@style/Texto_Cuerpo_ComprensionLectura" />
 
         <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#66000000"
                 android:id="@+id/conjunto"
                 >
 
@@ -57,6 +65,7 @@
             <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:text="@string/respuesta_a"
                     android:id="@+id/rbRespuesta1"
                     android:checked="false"
@@ -80,7 +89,8 @@
         </RadioGroup>
 
         <Space
-                android:layout_width="wrap_content"
+                android:id="@+id/space1"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 />
@@ -89,10 +99,23 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:text="@string/siguiente_pregunta"
             android:id="@+id/btnSiguientePregunta"
-            style="@style/AppButton"/>
+            style="@style/AppButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"/>
+
+    <Button
+            android:id="@+id/botonMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:background="@drawable/boton_home"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_alignTop="@id/btnSiguientePregunta"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

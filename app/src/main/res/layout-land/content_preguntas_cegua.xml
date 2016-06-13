@@ -11,14 +11,16 @@
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity"
+                tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCeguaActivity"
                 tools:showIn="@layout/activity_preguntas_cegua"
                 android:background="@drawable/cegua">
 
     <LinearLayout
             android:id="@+id/layoutTituloComprensionLectura"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margen_botones_paginas_cuento"
+            >
         <Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:text="@string/titulo_comprension_lectura"
                 android:id="@+id/textView"
                 style="@style/Texto_Titulo"
@@ -38,31 +41,15 @@
                 />
 
     </LinearLayout>
-    <Space
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/margen_botones_activity_principal"
-            />
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/layoutTituloComprensionLectura">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/siguiente_pregunta"
-                android:id="@+id/btnSiguientePregunta"
-                style="@style/AppButton"/>
 
-        <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:id="@+id/space"/>
+            android:layout_below="@+id/layoutTituloComprensionLectura"
+            >
 
         <LinearLayout
                 android:id="@+id/layoutPregunta"
@@ -70,19 +57,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
-                android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
                 >
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
+
+                    android:background="#66000000"
                     android:text="@string/texto_pregunta"
                     android:id="@+id/tvPregunta"
                     style="@style/Texto_Cuerpo_ComprensionLectura" />
 
             <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66000000"
                     android:id="@+id/conjunto"
                     >
 
@@ -113,6 +102,30 @@
             </RadioGroup>
 
         </LinearLayout>
+
+        <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:id="@+id/space"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:text="@string/siguiente_pregunta"
+                android:id="@+id/btnSiguientePregunta"
+                style="@style/AppButton"/>
+
+        <Button
+                android:id="@+id/botonMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="1dp"
+                android:minHeight="1dp"
+                android:background="@drawable/boton_home"
+                android:layout_gravity="bottom"/>
 
     </LinearLayout>
 

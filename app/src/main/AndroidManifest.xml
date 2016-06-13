@@ -66,20 +66,20 @@
                 android:label="@string/app_name"
                 android:screenOrientation="landscape"
                 android:theme="@style/AppTheme.NoActionBar"
-                android:parentActivityName=".CuentoCeguaActivity">
+                android:parentActivityName=".LeyendasActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".CuentoCeguaActivity"/>
+                    android:value=".LeyendasActivity"/>
         </activity>
         <activity
                 android:name=".PreguntasCadejosActivity"
                 android:label="@string/app_name"
                 android:screenOrientation="landscape"
                 android:theme="@style/AppTheme.NoActionBar"
-                android:parentActivityName=".CuentoCadejosActivity">
+                android:parentActivityName=".LeyendasActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".CuentoCadejosActivity"/>
+                    android:value=".LeyendasActivity"/>
         </activity>
     </application>
 
