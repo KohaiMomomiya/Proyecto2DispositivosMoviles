@@ -35,8 +35,6 @@ public class CuentoCeguaActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-
-
     try {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_cuento_cegua);
