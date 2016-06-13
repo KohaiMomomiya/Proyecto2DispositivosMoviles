@@ -17,10 +17,14 @@ public class LeyendasActivity extends AppCompatActivity {
     private static String idCuento;
     private static String nombreCuento;
 
+    AnalyticsTracker analyticsTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leyendas);
+
+        analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
 
 
     }
@@ -28,8 +32,8 @@ public class LeyendasActivity extends AppCompatActivity {
     public void IrAlCadejos(View view){
         Intent intent = new Intent(this, CuentoCadejosActivity.class);
         getIdStory("El%20Cadejos");
-        intent.putExtra("Id",idCuento);
-        intent.putExtra("Nombre",nombreCuento);
+        intent.putExtra("Id", idCuento);
+        intent.putExtra("Nombre", nombreCuento);
         startActivity(intent);
     }
 
@@ -62,5 +66,11 @@ public class LeyendasActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    protected void onResume(){
+
+        super.onResume();
+        analyticsTracker.trackScreen("LeyendasActivity");
     }
 }

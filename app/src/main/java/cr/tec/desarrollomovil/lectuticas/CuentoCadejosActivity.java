@@ -19,6 +19,8 @@ import java.util.concurrent.ExecutionException;
 
 public class CuentoCadejosActivity extends AppCompatActivity {
 
+  AnalyticsTracker analyticsTracker;
+
   private static String idCuento;
   private static String nombreCuento;
   private static Cuento cuentoCegua;
@@ -32,6 +34,8 @@ public class CuentoCadejosActivity extends AppCompatActivity {
     try {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_cuento_cadejos);
+
+      analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
 
       final Intent intent = getIntent();
       idCuento = intent.getStringExtra("Id");
@@ -90,7 +94,7 @@ public class CuentoCadejosActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
           Intent intentGo = new Intent(CuentoCadejosActivity.this,
-              PreguntasCadejosActivity.class);
+              IniciarPreguntasCadejosActivity.class);
           intentGo.putExtra("idCuento", idCuento);
           startActivity(intentGo);
         }
@@ -127,6 +131,12 @@ public class CuentoCadejosActivity extends AppCompatActivity {
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  protected void onResume(){
+
+    super.onResume();
+    analyticsTracker.trackScreen("CuentoCadejosActivity");
   }
 
 }

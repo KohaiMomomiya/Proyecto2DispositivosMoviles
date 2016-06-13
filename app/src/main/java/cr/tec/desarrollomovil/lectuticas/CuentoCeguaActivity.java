@@ -26,11 +26,17 @@ public class CuentoCeguaActivity extends AppCompatActivity {
   private TextView textParrafo;
   private int cantParrafos;
 
+  AnalyticsTracker analyticsTracker;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+
+
     try {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_cuento_cegua);
+      analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
+
       final Intent intent = getIntent();
       idCuento = intent.getStringExtra("Id");
       nombreCuento = intent.getStringExtra("Nombre");
@@ -87,7 +93,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
       btnPreguntas.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          startActivity(new Intent(CuentoCeguaActivity.this, PreguntasCeguaActivity.class));
+          startActivity(new Intent(CuentoCeguaActivity.this, IniciarPreguntasCeguaActivity.class));
         }
       });
     } catch (NumberFormatException e) {
@@ -122,6 +128,12 @@ public class CuentoCeguaActivity extends AppCompatActivity {
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  protected void onResume(){
+
+    super.onResume();
+    analyticsTracker.trackScreen("CuentoCeguaActivity");
   }
 
 }

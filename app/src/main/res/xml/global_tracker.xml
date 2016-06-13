@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="ga_trackingId">UA-79222704-1</string>
+
+    <integer name="ga_sessionTimeout">300</integer>
+    <string name="ga_sampleFrequency">100.0</string>
+
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughExceptions">true</bool>
+
+    <screenName name="cr.tec.desarrollomovil.lectuticas.MainActivity">MainActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.AcercaActivity">AcercaActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.CuentoCadejosActivity">CuentoCadejosActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.CuentoCeguaActivity">CuentoCeguaActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.LeyendasActivity">LeyendasActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity">PreguntasCadejoActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.PreguntasCeguaActivity">PreguntasCeguaActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.IniciarPreguntasCadejosActivity">IniciarPreguntasCadejosActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.IniciarPreguntasCeguaActivity">IniciarPreguntasCeguaActivity</screenName>
+
+
+
+
+
+
+
+</resources>
