@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_resultado_cadejos">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/cadejos"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/barraBotones"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/margen_botones_paginas_cuento"
+        android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
+        android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
+        android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+        android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
+        >
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/btnMenu"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/tamaño_boton_cuentos"
+            android:minHeight="@dimen/tamaño_boton_cuentos"
+            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
+            android:background="@drawable/boton_home" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPuntaje"
+        android:textColor="#e4672c"
+        android:textSize="25dp"
+        style="@style/EstiloTextoCuentos"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal" />
+
+
+</RelativeLayout>

@@ -26,11 +26,22 @@ public class CuentoCeguaActivity extends AppCompatActivity {
   private TextView textParrafo;
   private int cantParrafos;
 
+  AnalyticsTracker analyticsTracker;
+
+  private Button btnAnterior;
+  private Button btnSiguiente;
+  private Button btnMenu;
+  private Button btnPreguntas;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+
+
     try {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_cuento_cegua);
+      analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
+
       final Intent intent = getIntent();
       idCuento = intent.getStringExtra("Id");
       nombreCuento = intent.getStringExtra("Nombre");
@@ -43,19 +54,22 @@ public class CuentoCeguaActivity extends AppCompatActivity {
       cantParrafos = lista.size();
       textParrafo.setText(lista.get(contador).getTexto());
 
-      Button btnAnterior = (Button) findViewById(R.id.btnAtras);
-      Button btnSiguiente = (Button) findViewById(R.id.btnAdelante);
-      Button btnMenu = (Button) findViewById(R.id.btnMenu);
-      Button btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
+      btnAnterior = (Button) findViewById(R.id.btnAtras);
+      btnSiguiente = (Button) findViewById(R.id.btnAdelante);
+      btnMenu = (Button) findViewById(R.id.btnMenu);
+      btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
+      btnAnterior.setVisibility(View.INVISIBLE);
 
       btnSiguiente.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
           if (contador + 1 < cantParrafos) {
+            btnSiguiente.setVisibility(View.VISIBLE);
+            btnAnterior.setVisibility(View.VISIBLE);
             contador++;
             textParrafo.setText(lista.get(contador).getTexto());
           } else if (contador + 1 == cantParrafos) {
-
+            btnSiguiente.setVisibility(View.INVISIBLE);
           }
         }
       });
@@ -65,10 +79,13 @@ public class CuentoCeguaActivity extends AppCompatActivity {
         public void onClick(View v) {
 
           if (contador > 0) {
+            btnAnterior.setVisibility(View.VISIBLE);
+            btnSiguiente.setVisibility(View.VISIBLE);
             contador--;
             textParrafo.setText(lista.get(contador).getTexto());
           } else if (contador == 0) {
             textParrafo.setText(lista.get(contador).getTexto());
+            btnAnterior.setVisibility(View.INVISIBLE);
           } else if (contador < 0) {
             contador = 0;
             textParrafo.setText(lista.get(contador).getTexto());
@@ -79,15 +96,19 @@ public class CuentoCeguaActivity extends AppCompatActivity {
       btnMenu.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          finish();
-          startActivity(new Intent(CuentoCeguaActivity.this, MainActivity.class));
+          Intent intentMain= new Intent(CuentoCeguaActivity.this, MainActivity.class);
+          intentMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+          startActivity(intentMain);
         }
       });
 
       btnPreguntas.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          startActivity(new Intent(CuentoCeguaActivity.this, PreguntasCeguaActivity.class));
+          Intent intentGo = new Intent(CuentoCeguaActivity.this,
+                  IniciarPreguntasCeguaActivity.class);
+          intentGo.putExtra("idCuento", idCuento);
+          startActivity(intentGo);
         }
       });
     } catch (NumberFormatException e) {
@@ -122,6 +143,12 @@ public class CuentoCeguaActivity extends AppCompatActivity {
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  protected void onResume(){
+
+    super.onResume();
+    analyticsTracker.trackScreen("CuentoCeguaActivity");
   }
 
 }

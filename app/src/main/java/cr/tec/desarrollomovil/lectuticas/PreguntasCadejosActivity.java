@@ -23,6 +23,15 @@ public class PreguntasCadejosActivity extends AppCompatActivity {
     private int contador = 0;
     private int cantidadRespuestasCorrectas = 0;
     private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
+    private RadioGroup conjunto;
+    private RadioButton rbResp1;
+    private RadioButton rbResp2;
+    private RadioButton rbResp3;
+    private Pregunta pregunta;
+    private TextView tvPregunta;
+    private Respuesta resp1;
+    private Respuesta resp2;
+    private Respuesta resp3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,66 +43,50 @@ public class PreguntasCadejosActivity extends AppCompatActivity {
         idCuento = intent.getStringExtra("idCuento");
         getPreguntasRespuestas();
 
-        final Pregunta pregunta = preguntas.get(contador);
-        Respuesta resp1 = pregunta.getRespuesta(0);
-        Respuesta resp2 = pregunta.getRespuesta(1);
-        Respuesta resp3 = pregunta.getRespuesta(2);
+        pregunta = preguntas.get(contador);
+        resp1 = pregunta.getRespuesta(0);
+        resp2 = pregunta.getRespuesta(1);
+        resp3 = pregunta.getRespuesta(2);
 
-        final TextView tvPregunta = (TextView) findViewById(R.id.tvPregunta);
+        tvPregunta = (TextView) findViewById(R.id.tvPregunta);
         tvPregunta.setText(pregunta.getPregunta());
 
-        final RadioGroup conjunto = (RadioGroup) findViewById(R.id.conjunto);
+        conjunto = (RadioGroup) findViewById(R.id.conjunto);
 
-        final RadioButton rbResp1 = (RadioButton) findViewById(R.id.rbRespuesta1);
-        final RadioButton rbResp2 = (RadioButton) findViewById(R.id.rbRespuesta2);
-        final RadioButton rbResp3 = (RadioButton) findViewById(R.id.rbRespuesta3);
+        rbResp1 = (RadioButton) findViewById(R.id.rbRespuesta1);
+        rbResp2 = (RadioButton) findViewById(R.id.rbRespuesta2);
+        rbResp3 = (RadioButton) findViewById(R.id.rbRespuesta3);
 
         rbResp1.setText(resp1.getRespuesta());
         rbResp2.setText(resp2.getRespuesta());
         rbResp3.setText(resp3.getRespuesta());
 
-        Button btnSR = (Button) findViewById(R.id.btnSiguientePregunta);
+        Button btnSR = (Button) findViewById(R.id.btnPreguntaSiguiente);
 
         btnSR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (conjunto.getCheckedRadioButtonId() >= 0) {
-                    int id = conjunto.getCheckedRadioButtonId();
-                    RadioButton rb = (RadioButton) findViewById(id);
-                    if (pregunta.getRespuesta(0).isEsCorrecta()) {
-                        if (pregunta.getRespuesta(0).getRespuesta().equals(rb.getText().toString()))
-                            cantidadRespuestasCorrectas += 1;
-                    } else if (pregunta.getRespuesta(1).isEsCorrecta()) {
-                        if (pregunta.getRespuesta(1).getRespuesta().equals(rb.getText().toString()))
-                            cantidadRespuestasCorrectas += 1;
-                    } else if (pregunta.getRespuesta(2).isEsCorrecta()) {
-                        if (pregunta.getRespuesta(2).getRespuesta().equals(rb.getText().toString()))
-                            cantidadRespuestasCorrectas += 1;
-                    }
-                    if (contador + 1 < preguntas.size()) {
-                        contador++;
-                        Pregunta pregunta = preguntas.get(contador);
-                        Respuesta resp1 = pregunta.getRespuesta(0);
-                        Respuesta resp2 = pregunta.getRespuesta(1);
-                        Respuesta resp3 = pregunta.getRespuesta(2);
-
-                        tvPregunta.setText(pregunta.getPregunta());
-                        rbResp1.setText(resp1.getRespuesta());
-                        rbResp2.setText(resp2.getRespuesta());
-                        rbResp3.setText(resp3.getRespuesta());
-                    } else if (contador + 1 == preguntas.size()) {
-                        //Aqui cambia a una pantalla con el resultado de las respuestas
-                    }
-
-                    conjunto.clearCheck();
-                } else {
-                    Toast.makeText(PreguntasCadejosActivity.this,
-                            "Debe seleccionar al menos una respuesta", Toast.LENGTH_LONG).show();
+                revisarRespuesta();
+                if (contador + 1 < preguntas.size()) {
+                    contador++;
+                    pregunta = preguntas.get(contador);
+                    resp1 = pregunta.getRespuesta(0);
+                    resp2 = pregunta.getRespuesta(1);
+                    resp3 = pregunta.getRespuesta(2);
+                    tvPregunta.setText(pregunta.getPregunta());
+                    rbResp1.setText(resp1.getRespuesta());
+                    rbResp2.setText(resp2.getRespuesta());
+                    rbResp3.setText(resp3.getRespuesta());
+                } else if (contador + 1 == preguntas.size()) {
+                    Intent intentNext = new Intent(PreguntasCadejosActivity.this, ResultadoCadejosActivity.class);
+                    String puntaje = String.valueOf(cantidadRespuestasCorrectas);
+                    intentNext.putExtra("puntaje", puntaje);
+                    finish();
+                    startActivity(intentNext);
                 }
-
+                conjunto.clearCheck();
             }
         });
-
     }
 
     public void getPreguntasRespuestas() {
@@ -110,18 +103,31 @@ public class PreguntasCadejosActivity extends AppCompatActivity {
                     Pregunta pregunta = new Pregunta(
                             Integer.parseInt(objetoIndividual.getString("Id_Pregunta")),
                             objetoIndividual.getString("Pregunta"));
+                    Boolean escorrecta1 = false;
+                    Boolean escorrecta2 = false;
+                    Boolean escorrecta3 = false;
+
+                    if (objetoIndividual.getString("esCorrecta").equals("1"))
+                        escorrecta1 = true;
+
+                    if (objetoIndividual2.getString("esCorrecta").equals("1"))
+                        escorrecta2 = true;
+
+                    if (objetoIndividual3.getString("esCorrecta").equals("1"))
+                        escorrecta3 = true;
+
                     Respuesta respuesta1 = new Respuesta(
                             Integer.parseInt(objetoIndividual.getString("Id_Respuesta")),
                             objetoIndividual.getString("Respuesta"),
-                            Boolean.parseBoolean(objetoIndividual.getString("esCorrecta")));
+                            escorrecta1);
                     Respuesta respuesta2 = new Respuesta(
                             Integer.parseInt(objetoIndividual2.getString("Id_Respuesta")),
                             objetoIndividual2.getString("Respuesta"),
-                            Boolean.parseBoolean(objetoIndividual2.getString("esCorrecta")));
+                            escorrecta2);
                     Respuesta respuesta3 = new Respuesta(
                             Integer.parseInt(objetoIndividual3.getString("Id_Respuesta")),
                             objetoIndividual3.getString("Respuesta"),
-                            Boolean.parseBoolean(objetoIndividual3.getString("esCorrecta")));
+                            escorrecta3);
                     pregunta.addRespuesta(respuesta1);
                     pregunta.addRespuesta(respuesta2);
                     pregunta.addRespuesta(respuesta3);
@@ -139,6 +145,26 @@ public class PreguntasCadejosActivity extends AppCompatActivity {
         }
     }
 
+    public void revisarRespuesta() {
+        if (conjunto.getCheckedRadioButtonId() >= 0) {
+            int id = conjunto.getCheckedRadioButtonId();
+            RadioButton rb = (RadioButton) findViewById(id);
+            String opcion = rb.getText().toString();
+            if (resp1.getRespuesta().equals(opcion)) {
+                if (resp1.isEsCorrecta())
+                    cantidadRespuestasCorrectas += 1;
+            } else if (resp2.getRespuesta().equals(opcion)) {
+                if (resp2.isEsCorrecta())
+                    cantidadRespuestasCorrectas += 1;
+            } else if (resp3.getRespuesta().equals(opcion)) {
+                if (resp3.isEsCorrecta())
+                    cantidadRespuestasCorrectas += 1;
+            }
+        } else {
+            Toast.makeText(PreguntasCadejosActivity.this,
+                    "Debe seleccionar al menos una respuesta", Toast.LENGTH_LONG).show();
+        }
+    }
 
 
 }

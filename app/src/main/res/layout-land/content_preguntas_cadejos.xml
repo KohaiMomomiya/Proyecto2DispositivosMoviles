@@ -115,7 +115,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="top"
                 android:text="@string/siguiente_pregunta"
-                android:id="@+id/btnSiguientePregunta"
+                android:id="@+id/btnPreguntaSiguiente"
                 style="@style/AppButton"/>
 
         <Button

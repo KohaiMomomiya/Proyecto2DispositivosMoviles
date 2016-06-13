@@ -24,7 +24,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_above="@+id/btnSiguientePregunta"
+            android:layout_above="@+id/btnPreguntaSiguiente"
             >
 
         <Space
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/siguiente_pregunta"
-            android:id="@+id/btnSiguientePregunta"
+            android:id="@+id/btnPreguntaSiguiente"
             style="@style/AppButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -114,7 +114,7 @@
             android:minHeight="1dp"
             android:background="@drawable/boton_home"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_alignTop="@id/btnSiguientePregunta"
+            android:layout_alignTop="@id/btnPreguntaSiguiente"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 

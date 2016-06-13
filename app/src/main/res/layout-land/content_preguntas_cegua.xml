@@ -65,14 +65,14 @@
 
                     android:background="#66000000"
                     android:text="@string/texto_pregunta"
-                    android:id="@+id/tvPregunta"
+                    android:id="@+id/textPregunta"
                     style="@style/Texto_Cuerpo_ComprensionLectura" />
 
             <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#66000000"
-                    android:id="@+id/conjunto"
+                    android:id="@+id/conjunto2"
                     >
 
 
@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/respuesta_a"
-                        android:id="@+id/rbRespuesta1"
+                        android:id="@+id/rbrespuesta1"
                         android:checked="false"
                         style="@style/Texto_Opciones_ComprensionLectura" />
 
@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/respuesta_b"
-                        android:id="@+id/rbRespuesta2"
+                        android:id="@+id/rbrespuesta2"
                         android:checked="false"
                         style="@style/Texto_Opciones_ComprensionLectura" />
 
@@ -96,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/respuesta_c"
-                        android:id="@+id/rbRespuesta3"
+                        android:id="@+id/rbrespuesta3"
                         android:checked="false"
                         style="@style/Texto_Opciones_ComprensionLectura" />
             </RadioGroup>
@@ -115,7 +115,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="top"
                 android:text="@string/siguiente_pregunta"
-                android:id="@+id/btnSiguientePregunta"
+                android:id="@+id/btnPreguntaSiguiente"
                 style="@style/AppButton"/>
 
         <Button

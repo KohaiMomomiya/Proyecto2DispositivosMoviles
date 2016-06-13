@@ -19,6 +19,8 @@ import java.util.concurrent.ExecutionException;
 
 public class CuentoCadejosActivity extends AppCompatActivity {
 
+  AnalyticsTracker analyticsTracker;
+
   private static String idCuento;
   private static String nombreCuento;
   private static Cuento cuentoCegua;
@@ -26,12 +28,18 @@ public class CuentoCadejosActivity extends AppCompatActivity {
   private ArrayList<Parrafo> lista;
   private TextView textParrafo;
   private int cantParrafos;
+  private Button btnAnterior;
+  private Button btnSiguiente;
+  private Button btnMenu;
+  private Button btnPreguntas;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     try {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_cuento_cadejos);
+
+      analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
 
       final Intent intent = getIntent();
       idCuento = intent.getStringExtra("Id");
@@ -45,19 +53,22 @@ public class CuentoCadejosActivity extends AppCompatActivity {
       cantParrafos = lista.size();
       textParrafo.setText(lista.get(contador).getTexto());
 
-      Button btnAnterior = (Button) findViewById(R.id.btnAtras);
-      Button btnSiguiente = (Button) findViewById(R.id.btnAdelante);
-      Button btnMenu = (Button) findViewById(R.id.btnMenu);
-      Button btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
+      btnAnterior = (Button) findViewById(R.id.btnAtras);
+      btnSiguiente = (Button) findViewById(R.id.btnAdelante);
+      btnMenu = (Button) findViewById(R.id.btnMenu);
+      btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
+      btnAnterior.setVisibility(View.INVISIBLE);
 
       btnSiguiente.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
           if (contador + 1 < cantParrafos) {
+            btnSiguiente.setVisibility(View.VISIBLE);
+            btnAnterior.setVisibility(View.VISIBLE);
             contador++;
             textParrafo.setText(lista.get(contador).getTexto());
           } else if (contador + 1 == cantParrafos) {
-
+            btnSiguiente.setVisibility(View.INVISIBLE);
           }
         }
       });
@@ -65,12 +76,13 @@ public class CuentoCadejosActivity extends AppCompatActivity {
       btnAnterior.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
           if (contador > 0) {
+            btnAnterior.setVisibility(View.VISIBLE);
+            btnSiguiente.setVisibility(View.VISIBLE);
             contador--;
             textParrafo.setText(lista.get(contador).getTexto());
           } else if (contador == 0) {
-            textParrafo.setText(lista.get(contador).getTexto());
+            btnAnterior.setVisibility(View.INVISIBLE);
           } else if (contador < 0) {
             contador = 0;
             textParrafo.setText(lista.get(contador).getTexto());
@@ -81,8 +93,9 @@ public class CuentoCadejosActivity extends AppCompatActivity {
       btnMenu.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          finish();
-          startActivity(new Intent(CuentoCadejosActivity.this, MainActivity.class));
+          Intent intentMain = new Intent(CuentoCadejosActivity.this, MainActivity.class);
+          intentMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+          startActivity(intentMain);
         }
       });
 
@@ -90,7 +103,7 @@ public class CuentoCadejosActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
           Intent intentGo = new Intent(CuentoCadejosActivity.this,
-              PreguntasCadejosActivity.class);
+              IniciarPreguntasCadejosActivity.class);
           intentGo.putExtra("idCuento", idCuento);
           startActivity(intentGo);
         }
@@ -127,6 +140,12 @@ public class CuentoCadejosActivity extends AppCompatActivity {
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  protected void onResume(){
+
+    super.onResume();
+    analyticsTracker.trackScreen("CuentoCadejosActivity");
   }
 
 }

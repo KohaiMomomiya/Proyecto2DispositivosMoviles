@@ -7,10 +7,14 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+  AnalyticsTracker analyticsTracker;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
 
   }
 
@@ -22,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
   public void irAlAcerca(View view){
     Intent intent = new Intent(this, AcercaActivity.class);
     startActivity(intent);
+    analyticsTracker.trackEvent("Action", "Share", "Friends");
+
   }
 
+  protected void onResume(){
+
+    super.onResume();
+    analyticsTracker.trackScreen("MainActivity");
+  }
 }
