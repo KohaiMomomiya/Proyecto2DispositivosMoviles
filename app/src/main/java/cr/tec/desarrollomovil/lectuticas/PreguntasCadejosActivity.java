@@ -22,13 +22,16 @@ public class PreguntasCadejosActivity extends AppCompatActivity {
     private String idCuento;
     private int contador = 0;
     private int cantidadRespuestasCorrectas = 0;
+
     private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
     private RadioGroup conjunto;
     private RadioButton rbResp1;
     private RadioButton rbResp2;
     private RadioButton rbResp3;
+
     private Pregunta pregunta;
     private TextView tvPregunta;
+
     private Respuesta resp1;
     private Respuesta resp2;
     private Respuesta resp3;
