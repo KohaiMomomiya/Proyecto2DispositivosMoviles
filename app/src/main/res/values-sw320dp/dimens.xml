@@ -7,5 +7,7 @@
 
     <dimen name="tamaño_texto_parrafo_cuentos">12sp</dimen>
     <dimen name="tamaño_boton_cuentos">10dp</dimen>
+    <dimen name="tamaño_botones_grandes">80dp</dimen>
+    <dimen name="tamaño_botones">50dp</dimen>
 
 </resources>

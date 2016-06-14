@@ -1,6 +1,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="margen_botones_activity_principal">50dp</dimen>
+    <dimen name="margen_botones_activity_principal">60dp</dimen>
     <dimen name="margen_botones_seleccion_historia">5dp</dimen>
+
 
 </resources>

@@ -18,8 +18,10 @@
     <string name="descripcion_listing">Descripción:</string>
     <string name="siguiente_pregunta">Siguiente Pregunta</string>
     <string name="titulo_comprension_lectura">Comprensión de Lectura</string>
-    <string name="texto_pregunta">Aqui va la pregunta...</string>
+    <string name="texto_pregunta">Aquí va la pregunta…</string>
     <string name="respuesta_a">respuesta 1</string>
     <string name="respuesta_b">respuesta 2</string>
     <string name="respuesta_c">respuesta 3</string>
+    <string name="iniciar_preguntas">Iniciar Preguntas</string>
+    <string name="resultados_etiqueta">Resultados van aquí…</string>
 </resources>

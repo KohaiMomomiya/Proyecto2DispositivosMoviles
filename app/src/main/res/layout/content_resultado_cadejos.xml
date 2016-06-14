@@ -1,59 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:showIn="@layout/activity_resultado_cadejos">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/cadejos"
-        android:visibility="visible"/>
-
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:showIn="@layout/activity_resultado_cadejos"
+                tools:context=".ResultadoCadejosActivity"
+                android:background="@drawable/cadejos">
     <LinearLayout
-        android:id="@+id/barraBotones"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="@dimen/margen_botones_paginas_cuento"
-        android:layout_marginLeft="@dimen/margen_botones_paginas_cuento"
-        android:layout_marginStart="@dimen/margen_botones_paginas_cuento"
-        android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
-        android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
-        >
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/botonMenu"
+            android:layout_alignParentTop="true">
         <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-        <Button
-            android:id="@+id/btnMenu"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="@dimen/tamaño_boton_cuentos"
-            android:minHeight="@dimen/tamaño_boton_cuentos"
-            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
-            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
-            android:background="@drawable/boton_home" />
-
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                />
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/txtPuntaje"
+                    style="@style/TextoResultadoPreguntas"
+                    android:text="@string/resultados_etiqueta"
+                    android:gravity="center_horizontal" />
+        </ScrollView>
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPuntaje"
-        android:textColor="#e4672c"
-        android:textSize="25dp"
-        style="@style/EstiloTextoCuentos"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center_horizontal" />
-
+    <Button
+            android:id="@+id/botonMenu"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="@dimen/tamaño_botones_grandes"
+            android:layout_height="@dimen/tamaño_botones_grandes"
+            android:layout_marginBottom="@dimen/margen_botones_paginas_cuento"
+            android:background="@drawable/boton_home"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

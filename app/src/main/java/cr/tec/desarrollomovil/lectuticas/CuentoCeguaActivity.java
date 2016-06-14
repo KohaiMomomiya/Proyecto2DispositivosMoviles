@@ -10,11 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class CuentoCeguaActivity extends AppCompatActivity {
 
@@ -54,7 +52,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
 
       btnAnterior = (Button) findViewById(R.id.btnAtras);
       btnSiguiente = (Button) findViewById(R.id.btnAdelante);
-      btnMenu = (Button) findViewById(R.id.btnMenu);
+      btnMenu = (Button) findViewById(R.id.botonMenu);
       btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
       btnAnterior.setVisibility(View.INVISIBLE);
 
@@ -134,11 +132,7 @@ public class CuentoCeguaActivity extends AppCompatActivity {
       } else {
         Toast.makeText(this, "Error al realizar la consulta", Toast.LENGTH_LONG).show();
       }
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (ExecutionException e) {
-      e.printStackTrace();
-    } catch (JSONException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }

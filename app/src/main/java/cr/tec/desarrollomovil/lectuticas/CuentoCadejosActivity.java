@@ -55,7 +55,7 @@ public class CuentoCadejosActivity extends AppCompatActivity {
 
       btnAnterior = (Button) findViewById(R.id.btnAtras);
       btnSiguiente = (Button) findViewById(R.id.btnAdelante);
-      btnMenu = (Button) findViewById(R.id.btnMenu);
+      btnMenu = (Button) findViewById(R.id.botonMenu);
       btnPreguntas = (Button) findViewById(R.id.btnPreguntas);
       btnAnterior.setVisibility(View.INVISIBLE);
 

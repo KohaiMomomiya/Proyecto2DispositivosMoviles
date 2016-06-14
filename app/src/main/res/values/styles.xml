@@ -76,8 +76,11 @@
         <item name="android:background">@drawable/boton_menu_principal</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textAppearance">@style/Texto_Cuerpo_Negrita</item>
+    </style>
 
-
+    <style name="TextoResultadoPreguntas" parent="EstiloTextoCuentos">
+        <item name="android:textColor">@android:color/holo_orange_light</item>
+        <item name="android:textSize">@dimen/tamaño_texto_cuerpo_pregunta</item>
     </style>
 
 </resources>

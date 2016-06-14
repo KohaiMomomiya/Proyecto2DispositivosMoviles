@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="margen_botones_activity_principal">150dp</dimen>
+    <dimen name="margen_botones_activity_principal">120dp</dimen>
     <dimen name="margen_botones_seleccion_historia">5dp</dimen>
     <dimen name="margen_layout_seleccion_historia">20dp</dimen>
     <dimen name="margen_botones_paginas_cuento">30dp</dimen>
@@ -13,4 +13,6 @@
     <dimen name="tamaño_texto_cuerpo">22sp</dimen>
     <dimen name="tamaño_texto_cuerpo_pregunta">26sp</dimen>
     <dimen name="tamaño_texto_titulo">30sp</dimen>
+    <dimen name="tamaño_botones_grandes">180dp</dimen>
+    <dimen name="tamaño_botones">120dp</dimen>
 </resources>

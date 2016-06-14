@@ -11,4 +11,12 @@
     <string name="nombre_curso_disp_moviles">Mobile Applications Development</string>
     <string name="tec_nombre_completo">Costa Rica\'s Institute of Technology</string>
     <string name="descripcion_app">This application\'s objective is to encourage reading habits on children with an interactive approach to tell tales and legends from Costa Rica\'s folklore, allowing them to get a better understanding about these stories and chances to answer questions about them. Some of the included legends are "El Cadejos" and "La Cegua."</string>
+    <string name="respuesta_a">Answer 1</string>
+    <string name="respuesta_b">Answer 2</string>
+    <string name="respuesta_c">Answer 3</string>
+    <string name="siguiente_pregunta">Next Question</string>
+    <string name="texto_pregunta">Here goes the question…</string>
+    <string name="titulo_comprension_lectura">Reading Comprehension</string>
+    <string name="iniciar_preguntas">Start Questions</string>
+    <string name="resultados_etiqueta">Results go here...</string>
 </resources>

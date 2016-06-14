@@ -8,13 +8,9 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_main"
         tools:context="cr.tec.desarrollomovil.lectuticas.MainActivity"
-        android:id="@+id/fondo_menu_principal">
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/fondo_principal"
-            android:scaleType="centerCrop"
-            />
+        android:id="@+id/fondo_menu_principal"
+        android:background="@drawable/fondo_principal"
+        >
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -22,8 +18,8 @@
             android:layout_centerInParent="true">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tamaño_botones_grandes"
+            android:layout_height="@dimen/tamaño_botones_grandes"
             android:layout_marginRight="@dimen/margen_botones_activity_principal"
             android:layout_marginEnd="@dimen/margen_botones_activity_principal"
             android:minWidth="1dp"
@@ -34,8 +30,8 @@
             style="?android:attr/borderlessButtonStyle"
             android:onClick="irALeyendas" />
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/tamaño_botones_grandes"
+                android:layout_height="@dimen/tamaño_botones_grandes"
                 android:layout_marginLeft="@dimen/margen_botones_activity_principal"
                 android:layout_marginStart="@dimen/margen_botones_activity_principal"
                 android:minWidth="1dp"

@@ -7,10 +7,12 @@
     <dimen name="margen_layout_seleccion_historia">20dp</dimen>
     <dimen name="margen_botones_paginas_cuento">10dp</dimen>
     <dimen name="tamaño_texto_parrafo_cuentos">6sp</dimen>
-    <dimen name="tamaño_boton_cuentos">1dp</dimen>
 
     <dimen name="tamaño_texto_cuerpo">16sp</dimen>
     <dimen name="tamaño_texto_cuerpo_pregunta">18sp</dimen>
     <dimen name="tamaño_texto_titulo">24sp</dimen>
+
+    <dimen name="tamaño_botones_grandes">50dp</dimen>
+    <dimen name="tamaño_botones">80dp</dimen>
 
 </resources>

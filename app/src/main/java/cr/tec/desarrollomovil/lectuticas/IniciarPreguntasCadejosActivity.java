@@ -23,7 +23,7 @@ public class IniciarPreguntasCadejosActivity extends AppCompatActivity {
         Intent intent = getIntent();
         idCuento = intent.getStringExtra("idCuento");
 
-        Button btnPreguntas = (Button) findViewById(R.id.btnpregCegua);
+        Button btnPreguntas = (Button) findViewById(R.id.botonIniciarPreguntas);
 
         btnPreguntas.setOnClickListener(new View.OnClickListener() {
             @Override

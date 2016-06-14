@@ -19,7 +19,7 @@ public class ResultadoCeguaActivity extends AppCompatActivity {
         TextView txtPuntaje = (TextView) findViewById(R.id.txtPuntaje);
         txtPuntaje.setText("Felicitaciones!!!\n"+"Tu puntaje fue de:\n"+puntaje+" repuestas correctas");
 
-        Button btnMenu = (Button) findViewById(R.id.btnMenu);
+        Button btnMenu = (Button) findViewById(R.id.botonMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override

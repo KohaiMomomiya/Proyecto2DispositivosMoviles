@@ -7,17 +7,17 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:showIn="@layout/activity_iniciar_preguntas_cadejos"
-                tools:context=".IniciarPreguntasCadejosActivity"
-                android:background="@drawable/cadejos">
+                tools:showIn="@layout/activity_iniciar_preguntas_cegua"
+                tools:context=".IniciarPreguntasCeguaActivity"
+                android:background="@drawable/cegua">
 
     <pl.droidsonroids.gif.GifTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cadejos_anim"
+            android:background="@drawable/cegua_anim"
             android:id="@+id/view"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true" />
 
     <LinearLayout
             android:orientation="vertical"
@@ -29,20 +29,18 @@
 
         <Button
                 android:id="@+id/botonIniciarPreguntas"
-                android:background="@drawable/boton_preguntas"
                 style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/boton_preguntas"
                 android:layout_width="@dimen/tamaño_botones"
                 android:layout_height="@dimen/tamaño_botones"
-                android:layout_gravity="center_horizontal"
-                />
+                android:layout_gravity="center_horizontal" />
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/etiqueta_preguntas"
                 style="@style/EstiloTextoCuentos"
                 android:text="@string/iniciar_preguntas"
-                android:id="@+id/etiqueta_preguntas"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
     </LinearLayout>
 
 </RelativeLayout>
