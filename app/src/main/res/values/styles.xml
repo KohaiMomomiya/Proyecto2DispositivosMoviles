@@ -50,7 +50,7 @@
     </style>
 
     <style name="Texto_Titulo" parent="Texto_Cuerpo_Negrita">
-        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
         <item name="android:textSize">@dimen/tamaño_texto_titulo</item>
     </style>
 
@@ -59,11 +59,11 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
-    <style name="Texto_Cuerpo_ComprensionLectura" parent="Texto_Cuerpo">
+    <style name="Texto_Cuerpo_ComprensionLectura" parent="EstiloTextoCuentos">
         <item name="android:textSize">@dimen/tamaño_texto_cuerpo_pregunta</item>
     </style>
 
-    <style name="Texto_Opciones_ComprensionLectura" parent="Texto_Cuerpo_Negrita">
+    <style name="Texto_Opciones_ComprensionLectura" parent="Texto_Cuerpo_ComprensionLectura">
         <item name="android:textSize">@dimen/tamaño_texto_cuerpo</item>
     </style>
 
