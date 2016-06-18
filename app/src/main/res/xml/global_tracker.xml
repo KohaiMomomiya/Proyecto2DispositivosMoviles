@@ -11,12 +11,12 @@
 
     <screenName name="cr.tec.desarrollomovil.lectuticas.MainActivity">MainActivity</screenName>
     <screenName name="cr.tec.desarrollomovil.lectuticas.AcercaActivity">AcercaActivity</screenName>
-    <screenName name="cr.tec.desarrollomovil.lectuticas.CuentoCadejosActivity">CuentoCadejosActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.LecturaCuentoActivity">CuentoCadejosActivity</screenName>
     <screenName name="cr.tec.desarrollomovil.lectuticas.CuentoCeguaActivity">CuentoCeguaActivity</screenName>
     <screenName name="cr.tec.desarrollomovil.lectuticas.LeyendasActivity">LeyendasActivity</screenName>
-    <screenName name="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity">PreguntasCadejoActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.PreguntasCuentoActivity">PreguntasCadejoActivity</screenName>
     <screenName name="cr.tec.desarrollomovil.lectuticas.PreguntasCeguaActivity">PreguntasCeguaActivity</screenName>
-    <screenName name="cr.tec.desarrollomovil.lectuticas.IniciarPreguntasCadejosActivity">IniciarPreguntasCadejosActivity</screenName>
+    <screenName name="cr.tec.desarrollomovil.lectuticas.IniciarPreguntasCuentoActivity">IniciarPreguntasCadejosActivity</screenName>
     <screenName name="cr.tec.desarrollomovil.lectuticas.IniciarPreguntasCeguaActivity">IniciarPreguntasCeguaActivity</screenName>
 
 

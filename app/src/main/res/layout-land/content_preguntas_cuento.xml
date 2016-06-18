@@ -9,9 +9,9 @@
                 android:paddingRight="@dimen/margen_botones_paginas_cuento"
                 android:paddingEnd="@dimen/margen_botones_paginas_cuento"
                 android:paddingTop="@dimen/margen_botones_paginas_cuento"
-                tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCadejosActivity"
-                tools:showIn="@layout/activity_preguntas_cadejos"
-                android:background="@drawable/cadejos">
+                android:id="@id/layoutPreguntasLectura"
+                tools:context=".PreguntasCuentoActivity"
+                tools:showIn="@layout/activity_preguntas_cuento">
 
     <TextView
             android:layout_width="wrap_content"

@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-  AnalyticsTracker analyticsTracker;
+  private AnalyticsTracker analyticsTracker;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -18,19 +18,19 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
-  public void irALeyendas(View view){
+  public void irALeyendas(View view) {
     Intent intent = new Intent(this, LeyendasActivity.class);
     startActivity(intent);
   }
 
-  public void irAlAcerca(View view){
+  public void irAlAcerca(View view) {
     Intent intent = new Intent(this, AcercaActivity.class);
     startActivity(intent);
     analyticsTracker.trackEvent("Action", "Share", "Friends");
 
   }
 
-  protected void onResume(){
+  protected void onResume() {
 
     super.onResume();
     analyticsTracker.trackScreen("MainActivity");

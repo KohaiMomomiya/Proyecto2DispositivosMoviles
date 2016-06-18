@@ -1,137 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cr.tec.desarrollomovil.lectuticas">
+          package="cr.tec.desarrollomovil.lectuticas">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/icono_lectuticas"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
+            android:allowBackup="true"
+            android:icon="@mipmap/icono_lectuticas"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".LeyendasActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".AcercaActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".CuentoCadejosActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".LeyendasActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LeyendasActivity" />
-        </activity>
-        <activity
-            android:name=".CuentoCeguaActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".LeyendasActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LeyendasActivity" />
-        </activity>
-        <activity
-            android:name=".PreguntasCeguaActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".LeyendasActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LeyendasActivity" />
-        </activity>
-        <activity
-            android:name=".PreguntasCadejosActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".LeyendasActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LeyendasActivity" />
-        </activity>
-        <activity
-            android:name=".IniciarPreguntasCadejosActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".CuentoCadejosActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CuentoCadejosActivity" />
-        </activity>
-        <activity
-            android:name=".IniciarPreguntasCeguaActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".CuentoCeguaActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CuentoCeguaActivity" />
-        </activity>
-
-        <meta-data
-            android:name="com.google.android.gms.analytics.globalConfigResource"
-            android:resource="@xml/global_tracker" />
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
 
         <receiver
-            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
-            android:enabled="true">
+                android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+                android:enabled="true">
             <intent-filter>
-                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+                android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.INSTALL_REFERRER"/>
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.google.android.gms.analytics.AnalyticsService"
-            android:enabled="true"
-            android:exported="false" />
+                android:name="com.google.android.gms.analytics.AnalyticsService"
+                android:enabled="true"
+                android:exported="false"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
 
-        <receiver
-            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
-            android:enabled="true">
+        <activity
+                android:name=".MainActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="com.google.android.gms.analytics.INSTALL_REFERRER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </receiver>
+        </activity>
 
-        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+        <activity
+                android:name=".LeyendasActivity"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity"/>
+        </activity>
 
-        <activity android:name=".ResultadoCadejosActivity" />
-        <activity android:name=".ResultadoCeguaActivity"></activity>
+        <activity
+                android:name=".AcercaActivity"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity"/>
+        </activity>
+
+        <activity
+                android:name=".LecturaCuentoActivity"
+                android:parentActivityName=".LeyendasActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".LeyendasActivity"/>
+        </activity>
+
+        <activity
+                android:name=".PreguntasCuentoActivity"
+                android:parentActivityName=".LeyendasActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".LeyendasActivity"/>
+        </activity>
+
+        <activity
+                android:name=".IniciarPreguntasCuentoActivity"
+                android:parentActivityName=".LecturaCuentoActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".LecturaCuentoActivity"/>
+        </activity>
+
+        <activity
+                android:name=".ResultadoPreguntasActivity"
+                android:parentActivityName=".LeyendasActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".LeyendasActivity"/>
+        </activity>
+
+        <meta-data
+                android:name="com.google.android.gms.analytics.globalConfigResource"
+                android:resource="@xml/global_tracker"/>
+
     </application>
-
 </manifest>

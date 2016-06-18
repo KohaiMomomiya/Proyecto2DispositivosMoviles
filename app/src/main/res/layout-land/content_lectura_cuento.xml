@@ -3,9 +3,10 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="cr.tec.desarrollomovil.lectuticas.CuentoCeguaActivity"
-                tools:showIn="@layout/activity_cuento_cegua"
-                android:background="@drawable/cegua">
+                tools:context=".LecturaCuentoActivity"
+                tools:showIn="@layout/activity_lectura_cuento"
+                android:id="@id/layoutLecturaCuento"
+                >
 
     <Button
             android:id="@+id/botonMenu"
@@ -50,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:gravity="top|center"
                 android:text="New Text"
                 style="@style/EstiloTextoCuentos"/>
     </ScrollView>
@@ -84,4 +85,6 @@
             android:background="@drawable/boton_adelante"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
+
+
 </RelativeLayout>

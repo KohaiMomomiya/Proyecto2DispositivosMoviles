@@ -1,50 +1,82 @@
 package cr.tec.desarrollomovil.lectuticas;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
-public class PreguntasCeguaActivity extends AppCompatActivity {
-  AnalyticsTracker analyticsTracker;
+public class PreguntasCuentoActivity extends AppCompatActivity {
+
   private String idCuento;
+  private int idFondoCuento;
+
   private int contador = 0;
   private int cantidadRespuestasCorrectas = 0;
-  private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
-  private Pregunta pregunta;
-  private Respuesta resp1;
-  private Respuesta resp2;
-  private Respuesta resp3;
 
-  private TextView tvPregunta;
+  private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
   private RadioGroup conjunto;
   private RadioButton rbResp1;
   private RadioButton rbResp2;
   private RadioButton rbResp3;
 
+  private Pregunta pregunta;
+  private TextView tvPregunta;
+
+  private Respuesta resp1;
+  private Respuesta resp2;
+  private Respuesta resp3;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_preguntas_cegua);
-
-    analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
+    setContentView(R.layout.activity_preguntas_cuento);
 
     Intent intent = getIntent();
 
     idCuento = intent.getStringExtra("idCuento");
     getPreguntasRespuestas();
+
+    idFondoCuento = intent.getIntExtra("fondoCuento", 0);
+    RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.layoutPreguntasLectura);
+
+    if ((relativeLayout != null) && (idFondoCuento != 0)) {
+      try {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+          relativeLayout.setBackground(getDrawable(idFondoCuento));
+        } else {
+          relativeLayout.setBackgroundDrawable(getResources().getDrawable(idFondoCuento));
+        }
+      } catch (Exception e){
+        Log.e("ResourceError", "No se puede asignar el fondo de activity " +
+            "PreguntasCuentoActivity.");
+        e.printStackTrace();
+      }
+    }
+
+    Button botonMenu = (Button) findViewById(R.id.botonMenu);
+    if (botonMenu != null) {
+      botonMenu.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          volverAMenuPrincipal();
+        }
+      });
+    }
+
+
 
     pregunta = preguntas.get(contador);
     resp1 = pregunta.getRespuesta(0);
@@ -66,39 +98,39 @@ public class PreguntasCeguaActivity extends AppCompatActivity {
 
     Button btnSR = (Button) findViewById(R.id.btnPreguntaSiguiente);
 
-    btnSR.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        if (contador + 1 < preguntas.size()) {
-          contador++;
-          pregunta = preguntas.get(contador);
-          resp1 = pregunta.getRespuesta(0);
-          resp2 = pregunta.getRespuesta(1);
-          resp3 = pregunta.getRespuesta(2);
+    if (btnSR != null) {
+      btnSR.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          // TODO Cambiar esto para hacer respuestas parametrizables.
+          revisarRespuesta();
+          if (contador + 1 < preguntas.size()) {
+            contador++;
+            pregunta = preguntas.get(contador);
+            resp1 = pregunta.getRespuesta(0);
+            resp2 = pregunta.getRespuesta(1);
+            resp3 = pregunta.getRespuesta(2);
+            tvPregunta.setText(pregunta.getPregunta());
+            rbResp1.setText(resp1.getRespuesta());
+            rbResp2.setText(resp2.getRespuesta());
+            rbResp3.setText(resp3.getRespuesta());
 
-          tvPregunta.setText(pregunta.getPregunta());
-          rbResp1.setText(resp1.getRespuesta());
-          rbResp2.setText(resp2.getRespuesta());
-          rbResp3.setText(resp3.getRespuesta());
-        } else if (contador + 1 == preguntas.size()) {
-          Intent intentNext = new Intent(PreguntasCeguaActivity.this, ResultadoCeguaActivity.class);
-          String puntaje = String.valueOf(cantidadRespuestasCorrectas);
-          intentNext.putExtra("puntaje", puntaje);
-          finish();
-          startActivity(intentNext);
+          } else if (contador + 1 == preguntas.size()) {
+            Intent intentNext = new Intent(PreguntasCuentoActivity.this, ResultadoPreguntasActivity.class);
+            String puntaje = String.valueOf(cantidadRespuestasCorrectas);
+            intentNext.putExtra("puntaje", puntaje);
+            intentNext.putExtra("fondoCuento", idFondoCuento);
+
+            finish();
+            startActivity(intentNext);
+          }
+          conjunto.clearCheck();
         }
-        conjunto.clearCheck();
-      }
-    });
-
+      });
+    }
   }
 
-  protected void onResume() {
-    super.onResume();
-    analyticsTracker.trackScreen("PreguntasCeguaActivity");
-  }
-
-  public void getPreguntasRespuestas() {
+  private void getPreguntasRespuestas() {
     try {
       String url = "http://lectuticas.esy.es/selectQuestionsById.php?id=" + idCuento;
       String resultado = new AccesoBaseDatos(this, url).execute().get();
@@ -112,7 +144,6 @@ public class PreguntasCeguaActivity extends AppCompatActivity {
           Pregunta pregunta = new Pregunta(
               Integer.parseInt(objetoIndividual.getString("Id_Pregunta")),
               objetoIndividual.getString("Pregunta"));
-
           Boolean escorrecta1 = false;
           Boolean escorrecta2 = false;
           Boolean escorrecta3 = false;
@@ -146,20 +177,20 @@ public class PreguntasCeguaActivity extends AppCompatActivity {
       } else {
         Toast.makeText(this, "Error al realizar la consulta", Toast.LENGTH_LONG).show();
       }
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (ExecutionException e) {
-      e.printStackTrace();
-    } catch (JSONException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public void revisarRespuesta() {
+  private void revisarRespuesta() {
     if (conjunto.getCheckedRadioButtonId() >= 0) {
       int id = conjunto.getCheckedRadioButtonId();
       RadioButton rb = (RadioButton) findViewById(id);
-      String opcion = rb.getText().toString();
+
+      String opcion = null;
+      if (rb != null) {
+        opcion = rb.getText().toString();
+      }
       if (resp1.getRespuesta().equals(opcion)) {
         if (resp1.isEsCorrecta())
           cantidadRespuestasCorrectas += 1;
@@ -171,9 +202,15 @@ public class PreguntasCeguaActivity extends AppCompatActivity {
           cantidadRespuestasCorrectas += 1;
       }
     } else {
-      Toast.makeText(PreguntasCeguaActivity.this,
+      Toast.makeText(PreguntasCuentoActivity.this,
           "Debe seleccionar al menos una respuesta", Toast.LENGTH_LONG).show();
     }
   }
 
+  private void volverAMenuPrincipal(){
+    Intent intentMain = new Intent(this, LeyendasActivity.class);
+    intentMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    startActivity(intentMain);
+    finish();
+  }
 }

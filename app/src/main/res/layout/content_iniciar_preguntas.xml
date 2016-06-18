@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
+                android:id="@id/layoutIniciarPreguntasCuento"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:showIn="@layout/activity_iniciar_preguntas_cegua"
-                tools:context=".IniciarPreguntasCeguaActivity"
-                android:background="@drawable/cegua">
+                tools:showIn="@layout/activity_iniciar_preguntas"
+                tools:context=".IniciarPreguntasCuentoActivity"
+                >
 
-    <pl.droidsonroids.gif.GifTextView
+    <pl.droidsonroids.gif.GifImageView
+            android:id="@id/gifPersonajeCuento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cegua_anim"
-            android:id="@+id/view"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
 
     <LinearLayout
             android:orientation="vertical"
@@ -29,18 +29,20 @@
 
         <Button
                 android:id="@+id/botonIniciarPreguntas"
-                style="?android:attr/borderlessButtonStyle"
                 android:background="@drawable/boton_preguntas"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="@dimen/tamaño_botones"
                 android:layout_height="@dimen/tamaño_botones"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                />
 
         <TextView
-                android:id="@+id/etiqueta_preguntas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 style="@style/EstiloTextoCuentos"
                 android:text="@string/iniciar_preguntas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:id="@+id/etiqueta_preguntas"
+                />
     </LinearLayout>
 
 </RelativeLayout>

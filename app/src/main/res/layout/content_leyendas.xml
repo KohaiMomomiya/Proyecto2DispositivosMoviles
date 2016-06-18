@@ -33,7 +33,7 @@
                 android:layout_marginEnd="@dimen/margen_botones_seleccion_historia"
                 android:background="@drawable/icono_lib_cadejos"
                 style="?android:attr/borderlessButtonStyle"
-                android:onClick="IrAlCadejos" />
+                android:onClick="verLeyendaCadejos" />
 
             <Button
                 android:id="@+id/btnCegua"
@@ -45,7 +45,7 @@
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/icono_lib_cegua"
                 style="?android:attr/borderlessButtonStyle"
-                android:onClick="IrACegua" />
+                android:onClick="verLeyendaCegua" />
         </LinearLayout>
     </HorizontalScrollView>
 </RelativeLayout>

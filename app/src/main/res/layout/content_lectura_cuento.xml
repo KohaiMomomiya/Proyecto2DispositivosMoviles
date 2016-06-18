@@ -3,9 +3,10 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="cr.tec.desarrollomovil.lectuticas.CuentoCeguaActivity"
-                tools:showIn="@layout/activity_cuento_cegua"
-                android:background="@drawable/cegua">
+                tools:context=".LecturaCuentoActivity"
+                tools:showIn="@layout/activity_lectura_cuento"
+                android:id="@id/layoutLecturaCuento"
+                >
 
     <LinearLayout
             android:id="@+id/linearLayout1"

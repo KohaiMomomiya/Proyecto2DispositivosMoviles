@@ -6,7 +6,7 @@
     <string name="acerca_de_lectuticas">Acerca de LectuTicas</string>
     <string name="tec_nombre_completo">Tecnológico de Costa Rica</string>
     <string name="escuela_ingenieria_computacion">Escuela de Ingeniería en Computación</string>
-    <string name="nombre_curso_disp_moviles">Desarrollo de Aplicaciones Móviles</string>
+    <string name="nombre_curso_disp_moviles">Desarrollo de Aplicaciones para Dispositivos Móviles</string>
     <string name="desarrolladores_listing">Desarrolladores:</string>
     <string name="esteban_fonseca_montoya" translatable="false">Esteban Fonseca Montoya</string>
     <string name="arlyn_lopez_navarro" translatable="false">Arlyn López Navarro</string>
@@ -24,4 +24,8 @@
     <string name="respuesta_c">respuesta 3</string>
     <string name="iniciar_preguntas">Iniciar Preguntas</string>
     <string name="resultados_etiqueta">Resultados van aquí…</string>
+    <string name="error_consultaDatos">Hubo un error en la consulta de datos.</string>
+    <string name="error_iniciarPantallaCuento">Hubo un error al iniciar esta pantalla del cuento.</string>
+    <string name="mensaje_resultados_parte1">¡Felicitaciones!\nSu puntuación fue de:\n</string>
+    <string name="mensaje_resultados_parte2"> respuestas correctas.</string>
 </resources>

@@ -5,19 +5,19 @@ import android.os.Bundle;
 
 public class AcercaActivity extends AppCompatActivity {
 
-    AnalyticsTracker analyticsTracker;
+  private AnalyticsTracker analyticsTracker;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acerca);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_acerca);
 
-        analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
-    }
+    analyticsTracker = AnalyticsTracker.getAnalyticsTracker(this.getApplicationContext());
+  }
 
-    protected void onResume(){
+  protected void onResume() {
 
-        super.onResume();
-        analyticsTracker.trackScreen("AcercaActivity");
-    }
+    super.onResume();
+    analyticsTracker.trackScreen("AcercaActivity");
+  }
 }

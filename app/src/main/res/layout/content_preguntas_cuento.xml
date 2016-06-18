@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -10,9 +9,9 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="cr.tec.desarrollomovil.lectuticas.PreguntasCeguaActivity"
-                tools:showIn="@layout/activity_preguntas_cegua"
-                android:background="@drawable/cegua">
+                android:id="@id/layoutPreguntasLectura"
+                tools:context=".PreguntasCuentoActivity"
+                tools:showIn="@layout/activity_preguntas_cuento">
 
     <LinearLayout
             android:id="@+id/linearLayout1"
@@ -23,7 +22,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_above="@+id/botonMenu"
+            android:layout_above="@+id/btnPreguntaSiguiente"
             >
 
         <Space
@@ -94,19 +93,19 @@
             android:text="@string/siguiente_pregunta"
             android:id="@+id/btnPreguntaSiguiente"
             style="@style/AppButton"
+            android:layout_marginRight="@dimen/margen_botones_paginas_cuento"
+            android:layout_marginEnd="@dimen/margen_botones_paginas_cuento"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"/>
 
     <Button
             android:id="@+id/botonMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:layout_width="@dimen/tamaño_botones"
+            android:layout_height="@dimen/tamaño_botones"
             android:background="@drawable/boton_home"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_alignTop="@id/btnPreguntaSiguiente"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 

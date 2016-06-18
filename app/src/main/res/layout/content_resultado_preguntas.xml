@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
+                android:id="@id/layoutResultadosPreguntas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:showIn="@layout/activity_resultado_cegua"
-                tools:context=".ResultadoCeguaActivity"
-                android:background="@drawable/cegua">
+                tools:showIn="@layout/activity_resultado_preguntas"
+                tools:context=".ResultadoPreguntasActivity">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.6"
+                android:layout_weight="0.5"
                 />
         <ScrollView
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.1" />
     </LinearLayout>
-    
+
     <Button
             android:id="@+id/botonMenu"
             style="?android:attr/borderlessButtonStyle"
@@ -46,5 +46,5 @@
             android:background="@drawable/boton_home"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
-    
+
 </RelativeLayout>
