@@ -27,5 +27,6 @@
     <string name="error_consultaDatos">Hubo un error en la consulta de datos.</string>
     <string name="error_iniciarPantallaCuento">Hubo un error al iniciar esta pantalla del cuento.</string>
     <string name="mensaje_resultados_parte1">¡Felicitaciones!\nSu puntuación fue de:\n</string>
-    <string name="mensaje_resultados_parte2"> respuestas correctas.</string>
+    <string name="mensaje_resultados_parte2"> respuestas correctas de </string>
+    <string name="mensaje_resultados_parte3"> preguntas.\n Calificación: </string>
 </resources>

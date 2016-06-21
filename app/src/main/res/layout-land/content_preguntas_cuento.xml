@@ -56,30 +56,6 @@
                 android:id="@+id/conjunto"
                 >
 
-
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_a"
-                    android:id="@+id/rbRespuesta1"
-                    android:checked="false"
-                    style="@style/Texto_Opciones_ComprensionLectura"/>
-
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_b"
-                    android:id="@+id/rbRespuesta2"
-                    android:checked="false"
-                    style="@style/Texto_Opciones_ComprensionLectura"/>
-
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/respuesta_c"
-                    android:id="@+id/rbRespuesta3"
-                    android:checked="false"
-                    style="@style/Texto_Opciones_ComprensionLectura"/>
         </RadioGroup>
 
     </LinearLayout>

@@ -40,4 +40,6 @@ class Pregunta {
     return respuestas.get(index);
   }
 
+  ArrayList<Respuesta> getAllRespuestas (){ return respuestas;  }
+
 }

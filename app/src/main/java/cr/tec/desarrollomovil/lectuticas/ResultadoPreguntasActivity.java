@@ -19,10 +19,14 @@ public class ResultadoPreguntasActivity extends AppCompatActivity {
 
     Intent intent = getIntent();
     String puntaje = intent.getStringExtra("puntaje");
+    String cantPreguntas = intent.getStringExtra("preguntas");
+    int calificacion = (Integer.parseInt(puntaje) * 100)/Integer.parseInt(cantPreguntas);
+
 
 
     String mensajeResultado = getString(R.string.mensaje_resultados_parte1) + puntaje + " "
-            + getString(R.string.mensaje_resultados_parte2);
+            + getString(R.string.mensaje_resultados_parte2)+ " "+cantPreguntas+ " "+
+            getString(R.string.mensaje_resultados_parte3)+" "+String.valueOf(calificacion);
 
     TextView txtPuntaje = (TextView) findViewById(R.id.txtPuntaje);
     if (txtPuntaje != null) {

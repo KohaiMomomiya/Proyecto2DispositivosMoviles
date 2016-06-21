@@ -22,5 +22,6 @@
     <string name="error_consultaDatos">There was an error during data request.</string>
     <string name="error_iniciarPantallaCuento">There was an error when starting this tale\'s screen.</string>
     <string name="mensaje_resultados_parte1">Congratulations!\nYour score is:\n</string>
-    <string name="mensaje_resultados_parte2">correct answers.</string>
+    <string name="mensaje_resultados_parte2">correct answers of </string>
+    <string name="mensaje_resultados_parte3"> questions.\n Score:</string>
 </resources>
